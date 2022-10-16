@@ -1,0 +1,35 @@
+<div class="topics__header">
+    <h2>Browse Topics</h2>
+</div>
+<ul class="topics__list">
+    <li>
+        <a href="{%url 'home' %}" class="active"
+            >All <span>{{topics.count}}</span></a
+        >
+    </li>
+    {% for topic in topics%}
+    <li>
+        <a href="{%url 'home' %}?q={{topic.name}}"
+            >{{topic}} <span> {{topic.room_set.all.count}}</span></a
+        >
+    </li>
+    {%endfor%}
+</ul>
+<!-- <li>
+        <a href="/">Python <span>232</span></a>
+    </li>
+    <li>
+        <a href="/">JavaScript <span>122</span></a>
+    </li>
+    <li>
+        <a href="/">React <span>57</span></a>
+    </li> -->
+
+<!-- <div>
+    <a href="{%url 'home' %}"> All</a>
+</div>
+{% for topic in topics%}
+<div>
+    <a href="{%url 'home' %}?q={{topic.name}}">{{topic}}</a>
+</div>
+{%endfor%} -->
