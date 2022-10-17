@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://kit.fontawesome.com/de5fa6f0f7.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: white;
+
+        }
+
+        .content {
+            background-color: white;
+            height: 1000px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        #filter {
+            border-right: 1px solid #5597DA;
+        }
+
+        #filter h5 {
+            padding: 13px;
+
+
+
+
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 21px;
+            /* identical to mobile_view height */
+
+
+            color: #000000;
+        }
+
+        .cat {
+            text-align: left;
+        }
+
+        .head {
+
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 15px;
+            /* identical to mobile_view height */
+            margin-top: 30px;
+            margin-bottom: 10px;
+
+            color: #000000;
+        }
+
+        .cont {
+
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 5px;
+            /* identical to mobile_view height */
+
+
+            color: #000000;
+        }
+
+        .star {
+            line-height: 5px;
+            color: #FFD400;
+        }
+
+        .up {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 5px;
+            /* identical to mobile_view height */
+
+
+            color: #000000;
+        }
+
+        .check {
+            line-height: 5px;
+
+            padding-top: 1px;
+            background: #FFFFFF;
+            margin-bottom: 5px;
+            vertical-align: sub;
+        }
+
+        .phn {
+            margin-bottom: 5px;
+        }
+
+        .res {
+            padding: 13px;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 34px;
+
+            color: #000000;
+
+        }
+
+        .cards {
+            text-align: left;
+            width: 500px;
+        }
+
+        .img {
+            padding-right: 0;
+        }
+
+        .txt {
+            padding-left: 0;
+            padding-right: 0;
+            line-height: 5px;
+            position: absolute;
+            margin-left: 140px;
+        }
+
+        .name {
+
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 15px;
+
+            color: #000000;
+        }
+
+        .cut {
+            width: 76.33px;
+            height: 26.5px;
+            font-weight: 700;
+            font-size: 20px;
+
+            color: #000000;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 20px;
+
+            color: #5597DA;
+        }
+
+        .save {
+            font-weight: 700;
+            font-size: 10px;
+            color: #6F6F70;
+        }
+
+        .add {
+            width: 90px;
+            height: 30px;
+
+            background: #FFFFFF;
+            border: 1px solid #F26107;
+            border-radius: 4px;
+
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 11px;
+
+            color: #F26107;
+        }
+
+        .buy {
+            width: 92px;
+            height: 30px;
+
+            border: 1px solid #F26107;
+            color: #F26107;
+
+            margin-left: 5px;
+
+            background: #F26107;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 11px;
+
+            color: #FFFFFF;
+        }
+
+        @media screen and (max-width:900px) {
+
+            #filter {
+                display: none;
+            }
+
+            .cards {
+                width: auto;
+            }
+
+            .img {
+                padding: 0;
+            }
+
+            .txt {
+                width: auto;
+            }
+        }
+
+        .row {
+            margin-left: -4px;
+        }
+
+        .item {
+            margin-top: 30px;
+        }
+
+        .sort {
+            text-align: right;
+
+            font-weight: 600;
+            font-size: 17px;
+
+            color: #000000;
+            padding-left: 5px;
+            padding-right: 10px;
+        }
+
+        #sort {
+            width: 91px;
+            height: 22px;
+            margin-top: 20px;
+            background: #FFFFFF;
+            border: 1px solid #5597DA;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 12px;
+
+            /* identical to mobile_view height */
+
+
+            color: #5597DA;
+        }
+
+        @media screen and (min-width:415px) {
+            #mobile_view {
+                display: none;
+            }
+        }
+      
+
+        
+
+        .desktop_view {
+            text-align: center;
+           
+        }
+
+        .image {
+            width: 392px;
+            height: 328px;
+            background-color: #EDEDEC;
+        }
+
+       
+
+        .desktop_view .desc {
+            width: 392px;
+height: 145px;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ECECEC;
+        }
+        .btnn{
+            text-align: right;
+        }
+        .desktop_view .row {
+            width: 100%;
+            margin-top: 25px;
+        
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+           
+
+        }
+        .desktop_view  .col{
+            width: 392px;
+            margin: auto;
+            padding: 0;
+            margin-bottom: 54px;
+        }
+        #sort{
+            width: 128.23px;
+height: 31px;
+font-weight: 600;
+font-size: 17px;
+line-height: 21px;
+margin-right: 35px;
+
+           }
+           .address{
+            
+height: 32px;
+background: #D9D9D9;
+font-weight: 490;
+color: #000000;
+}
+.address i{
+    margin-left: 10px;
+    margin-right: 8px;
+    margin-top: 8px;
+    
+    font-size: larger;
+}
+.address span{
+   vertical-align: auto;
+}
+.address #pin{
+   font-weight: 500;
+
+}
+.sort{
+    border-top: 1px solid #5597DA;
+}
+@media screen and (min-width:416px){
+    .address{
+        display: none;
+    }
+}
+           @media screen and (min-width:1150px){
+            #right{margin-right: 0;}
+        #left{margin-left: 0;}
+           }
+        @media screen and (max-width:1150px){
+            .desktop_view .row{
+            margin-top: 25px;
+        
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+          
+
+        }
+        
+    }
+        @media screen and (max-width:800px){
+            #sort{
+                margin-right: 0;
+                
+            }
+           
+            .desktop_view .row{
+         
+        
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+           
+
+        }}
+        .space{
+            background-color: #F1FAFF;
+            height: 25px;
+        
+            width: 98%;
+
+        }
+
+        @media screen and (max-width:415px) {
+            .space{
+                display: none;
+            }
+            .sort{
+                background-color: white;
+                border-top: 0;
+            
+            }
+            #sort{
+                width: 91px;
+               
+height: 22px;
+font-weight: 600;
+font-size: 12px;
+line-height: 15px;
+            }
+            .desktop_view {
+                display: none;
+            }
+        }
+.img{
+    width: 118px;
+height: 137px;
+
+
+border: 1px solid #5597DA;
+border-radius: 8px;
+}
+.img img{
+    width: 118px;
+height: 137px;
+}
+@media screen and (max-width:350px){
+    .top{
+        overflow-y: hidden;
+    }
+    .txt {
+        margin-left: 115px;
+    }
+    .img img {
+    width: -webkit-fill-available;}
+    .cut {
+    width: 76.33px;
+    height: 26.5px;
+    font-weight: 700;
+    font-size: 15px;
+    color: #000000;
+}
+.price {
+    font-weight: 700;
+    font-size: 15px;
+    color: #5597DA;
+}
+.add {
+    width: 73px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #F26107;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 11px;
+    color: #F26107;
+}
+.buy {
+    width: 70px;
+    height: 30px;
+    border: 1px solid #F26107;
+    color: #F26107;
+    margin-left: 5px;
+    background: #F26107;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 11px;
+    color: #FFFFFF;
+}
+}
+       
+    </style>
+</head>
+
+<body>
+    <div class="space"></div>
+    <div class="address">
+        <i class="fa-solid fa-location-dot"></i> <span id="name">Deliver to Akash - </span> <span id="pin">140301 Mohali </span>
+      </div>
+    <div class="sort">
+
+        <select name="sort" id="sort" >
+            <option selected disabled>Sort By</option>
+            <option value="Relevance">Relevance</option>
+            <option value="Price:low to high">Price:low to high</option>
+            <option value="Price:high to low">Price:high to low</option>
+
+        </select>
+
+    </div>
+    <div class="desktop_view container1">
+        <div class="row">
+            <div class="col" id="right">
+                <div class="image">
+                    <img src="iphonee.svg" alt="">
+                </div>
+                <div class="desc">
+                    <h5>Iphone 14 Pro Max</h5>
+                    <p class="price" style="margin-bottom: 2px;"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                    <p class="save">You save 29,000</p>
+                    <div class="btnn">
+                        <button class="add">ADD TO CART</button>
+                        <button class="buy">BUY NOW</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col coloumn">
+                <div class="image">
+                    <img src="iphonee.svg" alt="">
+                </div>
+                <div class="desc">
+                    <h5>Iphone 14 Pro Max</h5>
+                    <p class="price" style="margin-bottom: 2px;"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                    <p class="save">You save 29,000</p>
+                    <div class="btnn">
+                        <button class="add">ADD TO CART</button>
+                        <button class="buy">BUY NOW</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col" id="left">
+                <div class="image">
+                    <img src="iphonee.svg" alt="">
+                </div>
+                <div class="desc">
+                    <h5>Iphone 14 Pro Max</h5>
+                    <p class="price" style="margin-bottom: 2px;"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                    <p class="save">You save 29,000</p>
+                    <div class="btnn">
+                        <button class="add">ADD TO CART</button>
+                        <button class="buy">BUY NOW</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col" id="right">
+                <div class="image">
+                    <img src="iphonee.svg" alt="">
+                </div>
+                <div class="desc">
+                    <h5>Iphone 14 Pro Max</h5>
+                    <p class="price" style="margin-bottom: 2px;"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                    <p class="save">You save 29,000</p>
+                    <div class="btnn">
+                        <button class="add">ADD TO CART</button>
+                        <button class="buy">BUY NOW</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col coloumn">
+                <div class="image">
+                    <img src="iphonee.svg" alt="">
+                </div>
+                <div class="desc">
+                    <h5>Iphone 14 Pro Max</h5>
+                    <p class="price" style="margin-bottom: 2px;"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                    <p class="save">You save 29,000</p>
+                    <div class="btnn">
+                        <button class="add">ADD TO CART</button>
+                        <button class="buy">BUY NOW</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col" id="left">
+                <div class="image">
+                    <img src="iphonee.svg" alt="">
+                </div>
+                <div class="desc">
+                    <h5>Iphone 14 Pro Max</h5>
+                    <p class="price" style="margin-bottom: 2px;"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                    <p class="save">You save 29,000</p>
+                    <div class="btnn">
+                        <button class="add">ADD TO CART</button>
+                        <button class="buy">BUY NOW</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="mobile_view">
+        <div class="row content">
+            <!-- <div class="col-2" id="filter">
+                <h5>Filters</h5>
+                <div class="cat">
+                    <div class="condition">
+                        <p class="head">Item Condition</p>
+                        <p class="cont">New</p>
+                        <p class="cont">Renewed</p>
+                    </div>
+                    <div class="condition">
+                        <p class="head">Customer & Reviews</p>
+                        <p class="star">&starf; &starf; &starf; &starf; &starf; </p>
+                        <p class="star">&starf; &starf; &starf; &starf; &star; <span class="up">&Up</span></p>
+                        <p class="star">&starf; &starf; &starf; &star; &star; <span class="up">&Up</span></p>
+                        </p>
+                        <p class="star">&starf; &starf; &star; &star; &star; <span class="up">&Up</span></p>
+                        </p>
+                        <p class="star">&starf; &star; &star; &star; &star; <span class="up">&Up</span></p>
+                        </p>
+                    </div>
+                    <div class="condition">
+                        <p class="head">Brand</p>
+                        <p class="cont phn">Realme <input type="checkbox" class="check"></p>
+                        <p class="cont phn"> Oppo <input type="checkbox" class="check"></p>
+                        <p class="cont phn">Apple <input type="checkbox" class="check"></p>
+                        <p class="cont phn">Samsung <input type="checkbox" class="check"></p>
+                        <p class="cont phn">Mi <input type="checkbox" class="check"></p>
+                    </div>
+                    <div class="condition">
+                        <p class="head">Price</p>
+                        <p class="cont phn">Under ₹1000 <input type="checkbox" class="check"></p>
+                        <p class="cont phn">₹1000 - ₹5000 <input type="checkbox" class="check"></p>
+                        <p class="cont phn">₹5000 - ₹10,000 <input type="checkbox" class="check"></p>
+                        <p class="cont phn">₹10,000 - ₹20,000 <input type="checkbox" class="check"></p>
+                        <p class="cont phn">Over ₹20,000 <input type="checkbox" class="check"></p>
+                    </div>
+                    <div class="condition">
+                        <p class="head">Inernal Memory</p>
+                        <p class="cont phn">4GB <input type="checkbox" class="check"></p>
+                        <p class="cont phn">8GB <input type="checkbox" class="check"></p>
+                        <p class="cont phn">16GB <input type="checkbox" class="check"></p>
+                    </div>
+
+                </div>
+            </div> -->
+            <div class="col" id="result">
+
+                
+                <div class="cards">
+                    <div class="row item">
+                        <div class="col-4 img">
+                            <img src="iphonee.svg" alt="">
+                        </div>
+                        <div class="col-8 txt">
+                            <p class="name">Iphone 13 Pro Max (256 Gb) - White</p>
+                            <p class="star">&starf; &starf; &starf; &starf; &star; <span class="up">4/5</span></p>
+                            <p class="price"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                            <p class="save">You save 29,000</p>
+                            <button class="add">ADD TO CART</button>
+                            <button class="buy">BUY NOW</button>
+
+                        </div>
+                    </div>
+                    <div class="row item">
+                        <div class="col-4 img">
+                            <img src="iphonee.svg" alt="">
+                        </div>
+                        <div class="col-8 txt">
+                            <p class="name">Iphone 13 Pro Max (256 Gb) - White</p>
+                            <p class="star">&starf; &starf; &starf; &starf; &star; <span class="up">4/5</span></p>
+                            <p class="price"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                            <p class="save">You save 29,000</p>
+                            <button class="add">ADD TO CART</button>
+                            <button class="buy">BUY NOW</button>
+
+                        </div>
+                    </div>
+                    <div class="row item">
+                        <div class="col-4 img">
+                            <img src="iphonee.svg" alt="">
+                        </div>
+                        <div class="col-8 txt">
+                            <p class="name">Iphone 13 Pro Max (256 Gb) - White</p>
+                            <p class="star">&starf; &starf; &starf; &starf; &star; <span class="up">4/5</span></p>
+                            <p class="price"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                            <p class="save">You save 29,000</p>
+                            <button class="add">ADD TO CART</button>
+                            <button class="buy">BUY NOW</button>
+
+                        </div>
+                    </div>
+                    <div class="row item">
+                        <div class="col-4 img">
+                            <img src="iphonee.svg" alt="">
+                        </div>
+                        <div class="col-8 txt">
+                            <p class="name">Iphone 13 Pro Max (256 Gb) - White</p>
+                            <p class="star">&starf; &starf; &starf; &starf; &star; <span class="up">4/5</span></p>
+                            <p class="price"><s class="cut">Rs. 1,79,000</s> 1,50,000</p>
+                            <p class="save">You save 29,000</p>
+                            <button class="add">ADD TO CART</button>
+                            <button class="buy">BUY NOW</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
