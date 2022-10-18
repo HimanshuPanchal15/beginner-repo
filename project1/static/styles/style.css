@@ -972,7 +972,7 @@ a {
   z-index: 999;
   top: 4.4rem;
   padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 @media screen and (max-width: 500px) {
@@ -986,7 +986,7 @@ a {
   padding-left: 2rem;
   padding-right: 2rem;
   height: 80.5vh;
-  /* overflow-y: auto; */
+  overflow-y: auto;
   padding-bottom: 0;
 }
 

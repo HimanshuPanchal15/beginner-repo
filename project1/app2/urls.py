@@ -6,5 +6,3 @@ urlpatterns = [
     path('add/', views.add, name='add'),
     path('add/sum/', views.sum, name='sum'),
 ]
-heloo fsfsfdfd!
-@
