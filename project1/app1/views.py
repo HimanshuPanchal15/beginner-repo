@@ -46,23 +46,30 @@ def logoutUser(request):
 def registerUser(request):
     page = 'register'
     form = UserCreationForm()
-    profile_form = ProfileUpdateForm(request.POST,
-                                     request.FILES,
-                                     instance=request.user.profile)
+    # profile_form = ProfileUpdateForm(request.POST,
+    #                                  request.FILES,
+    #                                  instance=request.user.profile)
 
     if (request.method == "POST"):
         form = UserCreationForm(request.POST)
-        if form.is_valid() and profile_form.is_valid():
+        if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
             user.save()
-            profile_form.save()
             login(request, user)
             return redirect('home')
+        # if form.is_valid() and profile_form.is_valid():
+        #     user = form.save(commit=False)
+        #     user.username = user.username.lower()
+        #     user.save()
+        #     profile_form.save()
+        #     login(request, user)
+        #     return redirect('home')
         else:
             messages.error(request, 'An error occurred during registration')
 
-    context = {'page': page, 'form': form, 'profile_form': profile_form}
+    # context = {'page': page, 'form': form, 'profile_form': profile_form}
+    context = {'page': page, 'form': form}
     return render(request, 'app1/login_register.html', context)
 
 
@@ -106,6 +113,13 @@ def userProfile(request, pk):
     context = {'user': user, 'rooms': rooms,
                'room_messages': user_messages, 'topics': topics}
     return render(request, 'app1/profile.html', context)
+
+
+def topicsPage(request):
+    q = request.GET.get('q')if request.GET.get('q') != None else ''
+    topics = Topic.objects.filter(Q(name__icontains=q))
+    context = {'topics': topics}
+    return render(request, 'app1/topics.html', context)
 
 
 @login_required(login_url='login')
@@ -174,15 +188,11 @@ def updateUser(request):
         profile_form = ProfileUpdateForm(
             request.POST, instance=request.user.profile)
 
-        if (form.is_valid()):
-            user_form = form.save()
-            return redirect('home')
-
         if (form.is_valid() and profile_form.is_valid()):
-            # user_form = form.save()
-            # custom_form = profile_form.save(False)
-            # custom_form.user = user_form
-            # custom_form.save()
+            user_form = form.save()
+            custom_form = profile_form.save(False)
+            custom_form.user = user_form
+            custom_form.save()
             form.save()
             profile_form.save()
             return redirect('home')
