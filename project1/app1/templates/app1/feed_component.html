@@ -31,7 +31,7 @@
     <div class="roomListRoom__content">
         <!-- <a href="room.html">JavaScript made Simple</a> -->
         <a href="{%url 'room' room.id%}">{{room.name}}</a>
-        <p>{{room.description}}</p>
+        <p>{{room.description|truncatewords:10}}</p>
     </div>
     <div class="roomListRoom__meta">
         <a href="{%url 'room' room.id%}" class="roomListRoom__joined">
