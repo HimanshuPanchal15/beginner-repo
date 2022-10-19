@@ -25,12 +25,13 @@
                 <div class="layout__body">
                     <form class="form" action="" method="post">
                         {% csrf_token %}
-                        <!-- <div class="form__group">
+                        <div class="form__group">
                             <label for="room_name">Room Name</label>
                             <input
                                 id="room_name"
                                 name="room_name"
                                 type="text"
+                                value="{{room.name}}"
                                 placeholder="E.g. Mastering Python + Django"
                             />
                         </div>
@@ -42,13 +43,16 @@
                                 type="text"
                                 name="topic"
                                 id="room_topic"
+                                value="{{room.topic.name}}"
                                 list="topic-list"
                             />
                             <datalist id="topic-list">
                                 <select id="room_topic">
-                                    <option value="">Select your topic</option>
-                                    <option value="Python">Python</option>
-                                    <option value="Django">Django</option>
+                                    {% for topic in topics%}
+                                    <option value="{{topic.name}}">
+                                        {{topic.name}}
+                                    </option>
+                                    {% endfor %}
                                 </select>
                             </datalist>
                         </div>
@@ -58,12 +62,16 @@
                             <textarea
                                 name="room_about"
                                 id="room_about"
+                                value="{{room.topic.name}}"
                                 placeholder="Write about your study group..."
                             ></textarea>
-                        </div> -->
-
-                        <div class="form__group">{{form.as_p}}</div>
-
+                        </div>
+                        <!-- {% for field in form%}
+                        <div class="form__group">
+                            <label for="room_field"> {{field.label}}</label>
+                            {{field}}
+                        </div>
+                        {% endfor %} -->
                         <div class="form__action">
                             <a
                                 class="btn btn--dark"
