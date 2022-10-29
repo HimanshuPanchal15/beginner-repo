@@ -199,23 +199,8 @@ plt.ylabel('Diabetes pedigree')
 plt.show()
 
 #3
-print("Correlation Coefficients with age:\n")
-print(li_age.corr(li_pregs))
-print(li_age.corr(li_plas))
-print(li_age.corr(li_pres))
-print(li_age.corr(li_skin))
-print(li_age.corr(li_test))
-print(li_age.corr(li_bmi))
-print(li_age.corr(li_pedi))
-print("\n")
-print("Correlation Coefficients with BMI:\n")
-print(li_bmi.corr(li_pregs))
-print(li_bmi.corr(li_plas))
-print(li_bmi.corr(li_pres))
-print(li_bmi.corr(li_skin))
-print(li_bmi.corr(li_test))
-print(li_bmi.corr(li_pedi))
-print(li_bmi.corr(li_age))
+print("Correlation Coefficients:\n")
+print(file.corr())
 
 #4
 #histograms
